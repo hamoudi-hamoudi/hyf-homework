@@ -48,7 +48,7 @@ ul {
   width: 1em;
   padding-right: 7px;
 }
-@media only screen and (max-width: 480px) {
+@media (max-width: 600px) {
   .leftside {
     width: 100%;
   }
