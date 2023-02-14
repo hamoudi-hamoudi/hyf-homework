@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>week 3</title>
+    <link rel="stylesheet" href="week3.css" />
+  </head>
+  <body>
+    <form action="">
+      <div class="all">
+        <header>
+          <h1>Order Summary</h1>
+          <div class="title">
+            <div>
+              total <br />
+              <b>total</b>
+            </div>
+            <div>
+              $333 / month <br />
+              <b>$100</b>
+            </div>
+          </div>
+        </header>
+        <h1 class="headline">Payment Method</h1>
+        <main>
+          <div class="pay">
+            <input
+              type="radio"
+              id="payment1"
+              value="payment1"
+              name="payment"
+              checked
+              class="radio"
+            />
+            <label for="payment1">
+              <div class="img-holder">
+                <img src="img\4.png" alt="mater card" />
+                <img src="img\3.png" alt="visa" />
+                <img src="img\2.png" alt="american" />
+              </div>
+
+              <span>Credit/Debit</span>
+            </label>
+
+            <input
+              type="radio"
+              id="payment2"
+              value="payment2"
+              name="payment"
+              checked
+              class="radio"
+            />
+            <label for="payment2">
+              <div class="img-holder">
+                <img src="img\1.png" alt="paypal" />
+              </div>
+              <span>Paypal</span>
+            </label>
+          </div>
+        </main>
+
+        <h1 class="headline">Card Info</h1>
+        <section>
+          <div class="cardinfo">
+            <h3>Card Number</h3>
+            <div class="info">
+              <label for="numbers"></label>
+              <input
+                type="number"
+                inputmode="numeric"
+                placeholder=" 1234 1234 1234 1234  "
+              />
+            </div>
+          </div>
+          <div>
+            <h3>Expire date</h3>
+            <div class="info">
+              <label for="numbers"></label>
+              <input type="text" placeholder=" MM / YY" />
+            </div>
+          </div>
+          <div>
+            <h3>Security Code</h3>
+            <div class="info">
+              <label for="numbers"></label>
+              <input type="number" inputmode="numeric" placeholder=" CVV" />
+            </div>
+          </div>
+        </section>
+        <div class="but">
+          <button>Buy Now</button>
+          <h4>Need Help?</h4>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

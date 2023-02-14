@@ -1,0 +1,140 @@
+.all {
+  margin-left: 27%;
+  margin-right: 27%;
+  line-height: 1.5rem;
+  background-color: #f5f5f5;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+header {
+  background: linear-gradient(#fd7b46, #fe4e9b);
+  color: white;
+  padding: 20px;
+}
+h1 {
+  font-family: "Arial";
+}
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+img {
+  width: 3rem;
+  margin-top: 5%;
+}
+span {
+  color: #939393;
+}
+
+.pay {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  justify-items: center;
+  gap: 2%;
+}
+.pay label {
+  width: 48%;
+  border-radius: 10px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+  height: 150px;
+  align-items: center;
+}
+.radio {
+  display: none;
+}
+.radio:checked + label {
+  border: solid #fe4e9b;
+}
+main {
+  padding: 20px;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  gap: 3%;
+  padding: 20px;
+  color: #939393;
+}
+.cardinfo {
+  flex-basis: 50%;
+}
+section div h3 {
+  text-align: center;
+  height: 30%;
+  font-size: 1.1rem;
+}
+.headline {
+  text-align: center;
+}
+input {
+  background-color: #f3f1f2;
+  border-radius: 4px;
+}
+
+.but {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+h4 {
+  color: #fd7b46;
+  font-size: 0.9rem;
+}
+button {
+  border-radius: 2rem;
+  padding: 2% 13%;
+  background: linear-gradient(#fd7b46, #fe4e9b);
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  border: none;
+}
+.info input {
+  padding: 5px 0;
+  width: 100%;
+  font-size: 1rem;
+}
+@media only screen and (max-width: 837px) {
+  .all {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .all {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  section {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cardinfo {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+@media only screen and (max-width: 392px) {
+  .pay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+  img {
+    width: 1rem;
+    margin-top: 20%;
+  }
+  .pay label {
+    height: 100px;
+  }
+}
