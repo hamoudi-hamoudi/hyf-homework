@@ -18,17 +18,15 @@ console.log(names); // [ "Peter", "Ahmad", "Yana", "kristina", "Samuel", "katrin
 
 const travelInformation = {
   speed: +prompt("enter your speed in km/h"),
-  destinationDistance: +prompt("enter your distants in km"), // a small change
+  distance: +prompt("enter your distants in km"), // a small change
 };
-function calculateTime(distant, speed) {
-  const travelTime = distant / speed;
+function calculateTime(travelInformation) {
+  const travelTime = travelInformation.distance / travelInformation.speed;
   const hours = Math.floor(travelTime);
   const minutes = ((travelTime - hours) * 60).toFixed(0);
   return `${hours} hours and ${minutes} minutes`;
 }
-console.log(
-  calculateTime(travelInformation.speed, travelInformation.destinationDistance)
-); // 8 hours and 38 minutes
+console.log(calculateTime(travelInformation)); // 8 hours and 38 minutes
 
 // Series duration of my life
 
@@ -65,7 +63,7 @@ function logOutSeriesText() {
     total += +seriePercentage;
   }
   seriesDurations.forEach(calculating);
-  console.log(`In total that is ${total} % of your life`);
+  console.log(`In total that is ${total.toFixed(3)} % of your life`);
 }
 logOutSeriesText();
 
@@ -82,16 +80,21 @@ saveNote("buy some food your fridge is empty", 3);
 console.log(notes);
 
 function getNote(id) {
-  let foundId =
-    notes.find((item) => {
-      return item.id === id;
-    }) || console.log("please enter a valide Id");
+  if (id === undefined || id === "") {
+    return "Please enter a valid id.";
+  }
+  let foundId = notes.find((item) => {
+    return item.id === id;
+  });
+  if (!foundId) {
+    return "id not found";
+  }
   return foundId;
 }
 
 console.log(getNote(3));
 console.log(getNote(25));
-console.log(getNote("")); // log out the text, plus 'undefined' can you please explain why ?
+console.log(getNote(""));
 
 function logOutNotesFormatted() {
   for (let i in notes) {
