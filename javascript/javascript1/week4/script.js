@@ -11,7 +11,7 @@ function getReply(command) {
     !phraseArr.includes("what")
   ) {
     name = phraseArr.slice(phraseArr.indexOf("is") + 1, phraseArr.length);
-    console.log("nice to meet you " + name.join(" "));
+    console.log(`nice to meet you ${phraseArr[phraseArr.length - 1]}`);
   } else if (
     phraseArr.includes("what") &&
     phraseArr.includes("name") &&
@@ -25,11 +25,7 @@ function getReply(command) {
     if (!todoTask) {
       console.log("please enter some todo !!");
     } else {
-      todo.push(
-        phraseArr
-          .slice(phraseArr.indexOf("add") + 1, phraseArr.indexOf("to"))
-          .join(" ")
-      );
+      todo.push(todoTask);
     }
   } else if (phraseArr.includes("remove") && phraseArr.includes("todo")) {
     let item = phraseArr
