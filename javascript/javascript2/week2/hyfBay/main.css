@@ -1,0 +1,62 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+}
+section {
+  margin: 0 auto;
+  width: 50%;
+  background: #cdcccc;
+  border-radius: 15px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  overflow: scroll;
+}
+section::-webkit-scrollbar {
+  display: none;
+}
+* {
+  box-sizing: border-box;
+}
+hr {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  margin: 25px auto;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+button {
+  border-radius: 50%;
+  width: 70px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: rgb(234, 234, 234);
+}
+.product {
+  margin: 20px;
+}
+
+.range input {
+  font-size: 2rem;
+  border-radius: 7px;
+  border: none;
+  padding-left: 16px;
+}
+#search {
+  padding-left: 16px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  font-size: 2rem;
+}
