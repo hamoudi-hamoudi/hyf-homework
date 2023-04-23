@@ -2,7 +2,7 @@
 //you can see the widget of the site on my github https://github.com/hamoudi-hamoudi
 
 // Find and count the Danish letters
-
+// before the merge
 function findingDanichLetters(str) {
   let specialChar1 = str.split("å").length - 1;
   let specialChar2 = str.split("æ").length - 1;

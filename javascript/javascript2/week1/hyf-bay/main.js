@@ -1,5 +1,5 @@
 console.log("Script loaded");
-
+// before the merge
 const products = getAvailableProducts();
 console.log(products);
 let mainTag = document.querySelector("#maintag");

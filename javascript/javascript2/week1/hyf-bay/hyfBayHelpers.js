@@ -1,5 +1,5 @@
 /* DONT MODIFY ANY OF THIS CODE!!!*/
-
+// before the merge
 window.getAvailableProducts = function () {
   function getRandomInt(min, max) {
     min = Math.ceil(min);
