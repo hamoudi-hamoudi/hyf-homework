@@ -7,7 +7,7 @@ let dataAll;
 let dataKeys;
 // ---- getting the data from API ----
 const getCurrency = async () => {
-  const currencyData = await fetch("https://open.er-api.com/v6/latest/USD");
+  const currencyData = await fetch("https://open.er-api.com/v6/latest");
   const data = await currencyData.json();
   dataAll = data.rates;
   dataKeys = Object.keys(dataAll);
@@ -16,22 +16,24 @@ const getCurrency = async () => {
 getCurrency();
 // ---- render the data in the DOM ----
 const currencyRender = (array) => {
-  selectedCurrency.innerHTML = array
-    .map((e) => {
-      if (e === "EUR") {
-        return `<option selected="selected" value="${e}">${e}</option>`;
-      }
-      return `<option value="${e}">${e}</option>`;
-    })
-    .join("");
-  changeToCurrency.innerHTML = array
-    .map((e) => {
-      if (e === "DKK") {
-        return `<option selected="selected" value="${e}">${e}</option>`;
-      }
-      return `<option value="${e}">${e}</option>`;
-    })
-    .join("");
+  array.forEach((e) => {
+    const option = document.createElement("option");
+    option.innerHTML = `${e}`;
+    option.value = `${e}`;
+    if (e === "EUR") {
+      option.selected = true;
+    }
+    selectedCurrency.appendChild(option);
+  });
+  array.forEach((e) => {
+    const option = document.createElement("option");
+    option.innerHTML = `${e}`;
+    option.value = `${e}`;
+    if (e === "DKK") {
+      option.selected = true;
+    }
+    changeToCurrency.appendChild(option);
+  });
 };
 // ---- calculate the exchange ----
 const calculation = (amount, type1, type2) => {
@@ -39,6 +41,7 @@ const calculation = (amount, type1, type2) => {
   const converter = (dataAll[type2] * amount) / dataAll[type1];
   return converter;
 };
+// ---- button for action ----
 button.addEventListener("click", (event) => {
   event.preventDefault();
   result.innerHTML = `${calculation(
