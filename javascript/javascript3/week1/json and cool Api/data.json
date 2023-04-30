@@ -1,0 +1,48 @@
+{
+  "RGB light": true,
+  "case": "NZXT",
+  "processor": {
+    "brand": "AMD",
+    "model": "Ryzen 5",
+    "clockSpeed": "3.6 GHz",
+    "cores": 6,
+    "cache": "16 MB"
+  },
+  "storage": [
+    {
+      "brand": "Samsung",
+      "model": "970 EVO Plus",
+      "type": "SSD",
+      "capacity": "500 GB"
+    },
+
+    {
+      "brand": "Seagate",
+      "type": "HDD",
+      "capacity": "2 TB",
+      "interface": "SATA 6 Gb/s",
+      "speed": "5600 RPM"
+    }
+  ],
+
+  "motherboard": {
+    "brand": "MSI",
+    "model": "B450"
+  },
+  "memory": {
+    "model": "Vengeance LPX",
+    "type": "DDR4",
+    "capacity": "16 GB",
+    "speed": "3200 MHz"
+  },
+
+  "graphicsCard": {
+    "brand": "AMD",
+    "model": "Radean RX 5600 XT",
+    "memory": "6 GB"
+  },
+  "powerSupply": {
+    "brand": "Corsair",
+    "wattage": "850 W"
+  }
+}
