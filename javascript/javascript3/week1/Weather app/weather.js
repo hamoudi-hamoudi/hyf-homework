@@ -19,11 +19,11 @@ const getCityLocation = async (name) => {
   }
 };
 // ---- using latitude and longitude to get a weather data using API ----
-
+const appid = `541ef5d4efc0006a00e05f056917e2a3`;
 const getWeatherInfo = async (lat, lon) => {
   try {
     const weather = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=541ef5d4efc0006a00e05f056917e2a3&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appid}&units=metric`
     );
     const data = await weather.json();
     return data;
@@ -77,8 +77,12 @@ myPostion.addEventListener("click", () => {
 
 // getting the key of the stored info
 let keys = Object.keys(localStorage);
-// petting the localStorage key to the select in HTML
-storage.innerHTML = keys.map((e) => `<option>${e}</option>`);
+let optionValues = keys.forEach((e) => {
+  const option = document.createElement("option");
+  option.value = `${e}`;
+  option.text = `${e}`;
+  storage.appendChild(option);
+});
 storage.addEventListener("change", async () => {
   // look for a change in status and render the result
   error.innerText = "";
