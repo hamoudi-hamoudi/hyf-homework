@@ -1,0 +1,66 @@
+body {
+  font-family: "Rock Salt", cursive;
+  background: linear-gradient(rgba(152, 48, 48, 0.75), rgba(90, 37, 37, 0.95));
+  z-index: -1;
+  height: 98vh;
+  transition: background-color 0.5s ease-in-out;
+}
+h1 {
+  font-size: 6rem;
+  margin: 0 auto;
+
+  animation: animation 2s ease;
+}
+button {
+  width: 200px;
+  border-radius: 16px;
+  height: 150px;
+  background-color: rgb(164, 161, 160);
+  font-size: 2rem;
+  margin: 0 auto;
+  cursor: pointer;
+}
+input {
+  height: 30px;
+  font-size: 2rem;
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+p {
+  font-size: 2rem;
+  animation: animation 1s infinite;
+  padding-top: 30px;
+}
+.press {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  height: 39vh;
+}
+span {
+  font-size: 3rem;
+}
+button:hover {
+  background-color: #860909;
+}
+button:active {
+  animation: animation 0.2s;
+}
+@keyframes animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
