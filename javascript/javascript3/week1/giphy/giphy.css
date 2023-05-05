@@ -1,0 +1,60 @@
+body {
+  font-family: "Rock Salt", cursive;
+  background-color: rgb(217, 217, 217);
+}
+h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+input {
+  padding: 0.5rem;
+  width: 30%;
+  height: auto;
+  border-radius: 16px;
+  font-size: 2rem;
+}
+#number {
+  height: 20px;
+  width: 10%;
+}
+button {
+  color: rgb(14, 14, 14);
+  cursor: pointer;
+  height: auto;
+  width: 200px;
+  font-size: 2rem;
+  padding: 0.5rem;
+  text-overflow: inherit;
+  border-radius: 16px;
+}
+button:hover {
+  background-color: #222322;
+  color: white;
+}
+.contain {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+img {
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 800px) {
+  img {
+    width: 45%;
+  }
+}
