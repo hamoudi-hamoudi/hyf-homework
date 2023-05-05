@@ -83,18 +83,9 @@ runAfterDelay(6, test2);
 //8/ Check if we have double clicked on the page
 
 let click = 0;
-document.addEventListener("click", doubleClickDetector);
-function doubleClickDetector() {
-  click++;
-  if (click === 1) {
-    setTimeout(() => {
-      click = 0;
-    }, 500);
-  } else {
-    console.log("double click!");
-  }
-}
-
+document.addEventListener("dblclick", (event) => {
+  console.log("double click!");
+});
 //9/ Create a function called jokeCreator
 
 function jokeCreator(shouldTellFunnyJoke, logFunnyJoke, logBadJoke) {
