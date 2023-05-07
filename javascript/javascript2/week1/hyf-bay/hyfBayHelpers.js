@@ -1,4 +1,5 @@
 /* DONT MODIFY ANY OF THIS CODE!!!*/
+// test
 
 window.getAvailableProducts = function () {
   function getRandomInt(min, max) {
