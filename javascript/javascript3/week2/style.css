@@ -1,0 +1,31 @@
+* {
+  background-color: rgb(149, 148, 148);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+  height: 90vh;
+}
+form > * {
+  margin-top: 30px;
+  height: 30px;
+  border: unset;
+  background-color: rgb(243, 241, 241);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+button {
+  color: rgb(14, 14, 14);
+  cursor: pointer;
+  height: 40px;
+}
+
+span {
+  margin: auto;
+}
+button:hover {
+  background-color: #2a2b2a;
+  color: white;
+}
