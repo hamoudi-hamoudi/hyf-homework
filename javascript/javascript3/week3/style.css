@@ -1,0 +1,107 @@
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+h1 {
+  text-align: center;
+  margin: 20px auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3rem;
+}
+#user-info {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#sign-button {
+  background-color: #fd3636;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#sign-button:hover {
+  background-color: #4f0202;
+}
+#view {
+  background-color: #8936fd;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#view:hover {
+  background-color: #ce01a2;
+}
+#form {
+  width: 50%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px black;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+#login-button {
+  background-color: #be1a1a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#login-button:hover {
+  background-color: #4f0202;
+}
+input {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(134, 131, 131);
+  font-size: 16px;
+  color: #333;
+}
+#shot-save {
+  background-color: #85d10c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#shot-save:hover {
+  background-color: #012f0b;
+}
+img {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+img:hover {
+  transform: scale(1.1);
+}
+.item {
+  position: relative;
+}
+.delete {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#userCollection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
