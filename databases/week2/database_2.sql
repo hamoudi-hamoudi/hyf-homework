@@ -62,6 +62,6 @@ WHERE user_id = (SELECT id FROM user WHERE name = 'Maryrose Meadows')
 AND MONTH(created)=9 ;
 
 -- ind how many tasks where created in each month 
-SELECT MONTH(created) AS Month , count(*) AS tasks
+SELECT MONTHNAME(created) AS Month , count(*) AS tasks
 FROM task
-GROUP BY MONTH(created);
+GROUP BY MONTH;
