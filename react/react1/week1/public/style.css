@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+}
+header {
+  background-color: #f5ba13;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 black;
+  margin: 0 auto;
+  text-align: center;
+}
+header h1 {
+  color: white;
+  font-weight: 200;
+  font-family: cursive;
+  font-size: 3.2rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+footer p {
+  color: #ccc;
+}
+.note {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.note ul {
+  border-radius: 7px;
+  padding: 30px 10px;
+  background-color: rgb(247, 221, 58);
+  margin: 0 auto;
+  font-size: 2.2rem;
+  list-style: none;
+  width: 30%;
+}
+.noteList {
+  display: flex;
+  justify-content: space-between;
+}
