@@ -1,13 +1,24 @@
-import React, { useState } from "react";
-import { todos } from "../todo-list";
-import NoteList from "./NoteList";
+import React, { useEffect, useState } from "react";
+import Note from "../components/Notes/Note";
+import NoteForm from "../components/Notes/NotesForm";
 
-function Note() {
+function NotePage() {
   const [noteValue, setNoteValue] = useState({
     description: "",
     deadline: "",
   });
-  const [tasks, setTasks] = useState(todos);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const response = await fetch(
+        "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw"
+      );
+      const data = await response.json();
+      setTasks(data);
+    };
+    fetchTasks();
+  }, []);
 
   const handleNoteValue = (e) => {
     const { name, value } = e.target;
@@ -39,11 +50,12 @@ function Note() {
   const deleteTodo = (id) => {
     setTasks(tasks.filter((e) => e.id !== id));
   };
+
   const RenderNotes =
     tasks.length > 0 ? (
       tasks.map((e) => {
         return (
-          <NoteList
+          <Note
             key={e.id}
             description={e.description}
             deadline={e.deadline}
@@ -59,25 +71,14 @@ function Note() {
 
   return (
     <>
-      <input
-        name="description"
-        type="text"
-        value={noteValue.description}
-        onChange={(e) => handleNoteValue(e)}
-        placeholder="Enter your Task"
+      <NoteForm
+        handleNoteValue={handleNoteValue}
+        noteValue={noteValue}
+        addTodo={addTodo}
       />
-      <input
-        type="date"
-        name="deadline"
-        value={noteValue.deadline}
-        onChange={(e) => handleNoteValue(e)}
-        placeholder="Task DeadLine"
-      />
-
-      <button onClick={addTodo}>add</button>
       {RenderNotes}
     </>
   );
 }
 
-export default Note;
+export default NotePage;

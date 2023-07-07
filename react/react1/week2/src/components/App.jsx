@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Note from "./Note";
+import NotePage from "../pages/NotePage";
 
 function App() {
   return (
     <>
       <Header />
       <div className="note">
-        <Note />
+        <NotePage />
       </div>
       <Footer />
     </>
