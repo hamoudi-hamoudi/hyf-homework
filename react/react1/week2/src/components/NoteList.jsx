@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 
 function NoteList(props) {
-  const { id, todo, onDelete } = props;
-  const [underLine, setUnderline] = useState("");
-  const [check, setCheck] = useState("check");
-  const [myVar, setMyVar] = useState(true);
+  const { id, description, deadline, onDelete } = props;
+  const [isDone, setIsDone] = useState(false);
 
-  const underLineStyle = () => {
-    if (myVar) {
-      setUnderline("line-through");
-      setCheck("checked");
-      setMyVar(false);
-    } else {
-      setUnderline("none");
-      setCheck("check");
-      setMyVar(true);
-    }
+  const handleClick = () => {
+    return setIsDone((prev) => !prev);
   };
 
   return (
-    <>
+    <ul onClick={handleClick} style={{ backgroundColor: isDone && "red" }}>
       <button
         onClick={() => {
           onDelete(id);
@@ -27,14 +17,15 @@ function NoteList(props) {
       >
         X
       </button>
-      <li style={{ textDecoration: underLine }}>{todo}</li>
-      <button
-        style={{ width: "100px", height: "20px" }}
-        onClick={underLineStyle}
+      <li
+        style={{
+          textDecoration: isDone && "line-through",
+        }}
       >
-        {check}
-      </button>
-    </>
+        {description}
+      </li>
+      <li>{deadline}</li>
+    </ul>
   );
 }
 export default NoteList;
