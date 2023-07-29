@@ -10,14 +10,15 @@ function NotePage() {
   });
   const [tasks, setTasks] = useState([]);
 
+  const fetchTasks = async () => {
+    const response = await fetch(
+      "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw"
+    );
+    const data = await response.json();
+    setTasks(data);
+  };
+
   useEffect(() => {
-    const fetchTasks = async () => {
-      const response = await fetch(
-        "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw"
-      );
-      const data = await response.json();
-      setTasks(data);
-    };
     fetchTasks();
   }, []);
 
@@ -30,8 +31,8 @@ function NotePage() {
     e.preventDefault();
     const { description, deadline } = noteValue;
     const now = new Date();
-    const comareDeadLinre = now < new Date(deadline);
-    if (description.trim() === "" || !comareDeadLinre) {
+    const comareDeadLinre = now.getTime() < new Date(deadline).getTime();
+    if (description.trim() === "" || description === null || !comareDeadLinre) {
       alert("please fill up the form");
     } else {
       setTasks([
