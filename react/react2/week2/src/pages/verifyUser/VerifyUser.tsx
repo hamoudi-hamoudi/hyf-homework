@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect, useRef } from "react";
 import Button from "@mui/material/Button";
 import { TextField, Typography } from "@mui/material";
 import axios from "axios";
@@ -7,7 +7,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 function VerifyUser() {
   const { state } = useLocation();
   const email: string = state.email;
+  const codeRef = React.useRef<HTMLInputElement>(null);
 
+  useLayoutEffect(() => {
+    codeRef.current?.focus();
+  }, []);
   const navigate = useNavigate();
   const [code, setCode] = useState<string>("");
   const submitForm = async (e: React.FormEvent) => {
@@ -27,7 +31,7 @@ function VerifyUser() {
         });
         if (response.status === 200 && response.statusText === "OK") {
           console.log(response.data);
-          navigate("/projects");
+          navigate("/login");
         }
       } catch (e) {
         console.error(e);
@@ -42,6 +46,7 @@ function VerifyUser() {
           Verify Email
         </Typography>
         <TextField
+          inputRef={codeRef}
           value={code}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             setCode(event.target.value);

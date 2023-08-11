@@ -1,7 +1,7 @@
 import { Modal, TextField, Typography, Box, Button } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
-import "./modal.css";
+import "./style/modal.css";
 
 interface NewProjectProps {
   open: boolean;
@@ -17,7 +17,7 @@ const style = {
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
-  p: 10,
+  p: 6,
 };
 function NewProject({ open, handleClose, token }: NewProjectProps) {
   const [title, setTitle] = useState<string>("");
@@ -75,6 +75,7 @@ function NewProject({ open, handleClose, token }: NewProjectProps) {
                 rows={4}
                 fullWidth
               />
+
               <Button
                 variant="contained"
                 onClick={() => {

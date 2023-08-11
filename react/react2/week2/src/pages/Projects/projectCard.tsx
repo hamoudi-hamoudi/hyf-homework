@@ -1,4 +1,4 @@
-import "./projectCard.css";
+import "./style/projectCard.css";
 
 interface Icard {
   title: string;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { TextField, Typography } from "@mui/material";
@@ -10,7 +10,11 @@ function LoginPage() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
+  const emailRef = React.useRef<HTMLInputElement>(null);
 
+  useLayoutEffect(() => {
+    emailRef.current?.focus();
+  }, []);
   const submitForm = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email && password) {
@@ -41,6 +45,7 @@ function LoginPage() {
           Login Form
         </Typography>
         <TextField
+          inputRef={emailRef}
           value={email}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             setEmail(event.target.value);

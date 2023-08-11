@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import NewProject from "./modal";
 import Card from "./projectCard";
-import "./index.css";
+import "./style/index.css";
 
 interface DataType {
   id: number;
