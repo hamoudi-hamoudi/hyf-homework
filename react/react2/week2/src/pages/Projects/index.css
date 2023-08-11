@@ -1,0 +1,12 @@
+.cards {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.btn {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+}
